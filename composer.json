@@ -1,8 +1,8 @@
 {
-    "name": "kazist/setup",
-    "description": "Kazist Setup Manager.",
-    "keywords": ["kazist", "setup manager"],
-    "homepage": "https://github.com/kazist/setup",
+    "name": "mybizna/setup",
+    "description": "Mybizna Setup Manager.",
+    "keywords": ["mybizna", "setup manager"],
+    "homepage": "https://github.com/mybizna/setup",
     "license": "LGPL-3.0-or-later",
      "version": "1.0.28",
     "authors": [
