@@ -1,0 +1,36 @@
+{
+    "name": "kazist/setup",
+    "description": "Kazist Setup Manager.",
+    "keywords": ["kazist", "setup manager"],
+    "homepage": "https://github.com/kazist/setup",
+    "license": "LGPL-3.0-or-later",
+     "version": "1.0.28",
+    "authors": [
+        {
+            "name": "Dedan Irungu",
+            "email": "info@emshyinnovate.com",
+            "homepage": "http://emshyinnovate.com",
+            "role": "Founder & Developer"
+        }
+    ],
+    "require": {},
+    "require-dev": {},
+    "autoload": {},
+    "autoload-dev": {},
+    "scripts": {
+        "pre-install-cmd": [
+            "echo 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'"
+        ],
+        "post-create-project-cmd": [
+            "composer create-project laravel/laravel:^9.0 mybizna",
+            "php composer_merger.php",
+            "rm mybizna/composer.json && rm mybizna/composer.lock  && rm composer.lock",
+            "mv -R mybizna/. . && rm -R mybizna",
+            "chmod +x mybizna_install.sh && ./mybizna_install.sh"
+        ]
+    },
+    "extra": {},   
+    "config": {},
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
