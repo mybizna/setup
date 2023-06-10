@@ -137,7 +137,7 @@ kernel_file_path="app/Http/Kernel.php"
 # Check if the file exists
 if [[ -f "$kernel_file_path" ]]; then
     # Remove the comment from the specified line
-    sed -i 's#// \\Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful::class,#\Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,#' "$kernel_file_path"
+    sed -i 's#// \\Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful::class,#\\Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful::class,#' "$kernel_file_path"
 
     echo "Comment removed successfully."
 else
