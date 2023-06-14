@@ -4,7 +4,7 @@
     "keywords": ["mybizna", "setup manager"],
     "homepage": "https://github.com/mybizna/setup",
     "license": "LGPL-3.0-or-later",
-     "version": "1.0.34",
+     "version": "1.0.35",
     "authors": [
         {
             "name": "Dedan Irungu",

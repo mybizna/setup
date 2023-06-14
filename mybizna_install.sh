@@ -14,6 +14,21 @@ validate_string() {
     return 0
 }
 
+#xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+#xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+composer require mybizna/account
+
+php artisan cache:table
+php artisan session:table
+php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
+php artisan vendor:publish --provider="Mybizna\Assets\Providers\MybiznaAssetsProvider"
+php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
+
+
+#xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+#xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
 # Prompt for Mysql Host
 read -p "Enter Mysql Host (default is localhost): " -e db_host
 db_host="${name:-localhost}"
@@ -143,18 +158,6 @@ if [[ -f "$kernel_file_path" ]]; then
 else
     echo "Error: Kernel.php file not found at $kernel_file_path."
 fi
-
-#xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-#xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
-composer require mybizna/account
-
-php artisan cache:table
-php artisan session:table
-php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
-php artisan vendor:publish --provider="Mybizna\Assets\Providers\MybiznaAssetsProvider"
-php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
-
 
 #xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 #xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
