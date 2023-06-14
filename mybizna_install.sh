@@ -189,21 +189,21 @@ if ! validate_string "$erp_phone"; then
 fi
 
 
-php artisan tinker <<EOF
 
-use Illuminate\Support\Facades\Hash;
+php artisan tinker --execute="
 
-\$user = new App\Models\User();
-\$user->password = Hash::make('$erp_password');
-\$user->email = '$erp_email';
-\$user->name = '$erp_name';
-\$user->is_admin = 1;
-\$user->username = '$erp_username';
-\$user->phone = '$erp_phone';
-\$user->save();
-exit
-EOF
+    use Illuminate\Support\Facades\Hash;
 
+    \$user = new App\Models\User();
+    \$user->password = Hash::make('$erp_password');
+    \$user->email = '$erp_email';
+    \$user->name = '$erp_name';
+    \$user->is_admin = 1;
+    \$user->username = '$erp_username';
+    \$user->phone = '$erp_phone';
+    \$user->save();
+    exit;
+"
 
 #xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 #xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
