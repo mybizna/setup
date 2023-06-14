@@ -29,6 +29,15 @@ php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvid
 #xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 #xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
+
+echo ""
+echo ""
+echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+echo "xxxxxxxxxxxxxxxx -- Database Setting -- xxxxxxxxxxxxxxxxxxx"
+echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+echo ""
+echo ""
+
 # Prompt for Mysql Host
 read -p "Enter Mysql Host (default is localhost): " -e db_host
 db_host="${name:-localhost}"
@@ -162,6 +171,13 @@ fi
 #xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 #xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
+echo ""
+echo ""
+echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+echo "xxxxxxxxxxxxxxxx -- ERP Setting -- xxxxxxxxxxxxxxxxxxx"
+echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+echo ""
+echo ""
 
 # Prompt for ERP Admin Username
 read -p "Enter ERP Admin Name: " erp_name
@@ -201,11 +217,6 @@ if ! validate_string "$erp_phone"; then
     echo "Error: ERP Admin Phone cannot be empty."
     exit 1
 fi
-
-
-
-#xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-#xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 php artisan automigrator:migrate
 
