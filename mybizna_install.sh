@@ -203,6 +203,12 @@ if ! validate_string "$erp_phone"; then
 fi
 
 
+
+#xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+#xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+php artisan automigrator:migrate
+
 php artisan tinker --execute="
 
     use Illuminate\Support\Facades\Hash;
@@ -218,10 +224,6 @@ php artisan tinker --execute="
     exit;
 "
 
-#xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-#xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
-php artisan automigrator:migrate
 
 php artisan module:enable
 
