@@ -144,6 +144,17 @@ else
     echo "Error: Kernel.php file not found at $kernel_file_path."
 fi
 
+#xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+#xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+composer require mybizna/account
+
+php artisan cache:table
+php artisan session:table
+php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
+php artisan vendor:publish --provider="Mybizna\Assets\Providers\MybiznaAssetsProvider"
+php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
+
 
 #xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 #xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
@@ -189,7 +200,6 @@ if ! validate_string "$erp_phone"; then
 fi
 
 
-
 php artisan tinker --execute="
 
     use Illuminate\Support\Facades\Hash;
@@ -204,18 +214,6 @@ php artisan tinker --execute="
     \$user->save();
     exit;
 "
-
-#xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-#xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
-composer require mybizna/account
-
-php artisan cache:table
-php artisan session:table
-php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
-php artisan vendor:publish --provider="Mybizna\Assets\Providers\MybiznaAssetsProvider"
-php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
-
 
 #xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 #xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
